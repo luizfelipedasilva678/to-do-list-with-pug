@@ -37,6 +37,22 @@ body {
 }
 
 .tasks {
+  &__ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  &__remove {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  &__li {
+    display: flex;
+    justify-content: space-between;
+  }
+
   &__action {
     display: flex;
     gap: 10px;

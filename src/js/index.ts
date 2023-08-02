@@ -1,19 +1,18 @@
 import '../styles/style.css';
-import { createElement, createTextNode } from './utils/dom';
+import { ADD_TASK_ID, REMOVE_TASK_CLASS } from './constants';
+import { createTask } from './lib/createTask';
+import { removeTask } from './lib/removeTask';
 
 window.addEventListener('DOMContentLoaded', () => {
-  const addBtn = document.getElementById('add-task') as HTMLButtonElement;
-  const input = document.getElementById('task-name') as HTMLInputElement;
-  const tasksList = document.getElementById('tasks-list') as HTMLUListElement;
+  window.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
 
-  addBtn.addEventListener('click', () => {
-    const task = input.value;
+    if (target.id === ADD_TASK_ID) {
+      createTask();
+    }
 
-    if (task !== '') {
-      const li = createElement<HTMLLIElement>('li');
-      const text = createTextNode(task);
-      li.appendChild(text);
-      tasksList.appendChild(li);
+    if (target.classList.contains(REMOVE_TASK_CLASS)) {
+      removeTask(target);
     }
   });
 });
