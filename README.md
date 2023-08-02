@@ -1,3 +1,3 @@
 # To Do list using pug
 
-## Simple To Do list made using pug just to training some concepts
+## Simple To Do list made using pug just to training some concepts of pug and postcss.
